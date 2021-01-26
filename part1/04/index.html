@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            padding: 10% 20%;
+            background-color: rgb(155, 154, 152);
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left {
+            position: absolute;
+            padding: 15%; /* 这里百分比相对的是父元素的宽度 */
+            top: -30%; /* 这里百分比相对的是父元素的高度 */
+            left: -15%;
+            border-radius: 50%; 
+            background-color: yellow;
+        }
+
+        .right {
+            position: absolute;
+            padding: 15%;
+            bottom: -30%;
+            right: -15%;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<html>
+    <body>
+        <div class="wrapper">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </body>
+</html>
