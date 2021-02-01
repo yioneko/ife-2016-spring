@@ -78,7 +78,6 @@ aside {
     color: rgb(110, 128, 149);
     background-color: rgb(43, 46, 61);
     min-width: 10rem;
-    max-width: 16.25rem;
     /* 260px/16px */
     /* 有无必要根据字体大小来决定宽度？字体大小也是以像素为单位，
     现代浏览器的缩放不是通过改变字体大小而是改变实际像素的大小来
@@ -354,7 +353,6 @@ main {
     margin: auto 0;
     position: relative;
 }
-
 
 /* query end */
 
@@ -643,7 +641,7 @@ main {
 
 /* project-group-card end */
 
-/* project-group-detail-card begin */
+/* project-group-detail-card start */
 
 .project-group-detail-card .card-content {
     padding: 1.0625rem 2.25rem 2.375rem 2.25rem;
