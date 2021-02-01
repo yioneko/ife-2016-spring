@@ -1,0 +1,834 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button[type="submit"] {
+    color: white;
+    background-color: #388ac2;
+    border: 0;
+    border-radius: 3px;
+    padding: .4375rem .875rem;
+}
+
+/* header start */
+
+header {
+    height: 3.4375rem;
+    padding-left: 3.125rem;
+    padding-right: 5.625rem;
+    background-color: rgb(33, 137, 191);
+    display: flex;
+    align-items: center;
+}
+
+header .search {
+    width: 24.609375%;
+    /* 315px/1280px */
+    height: 1.75rem;
+    border-radius: .875rem;
+    padding-left: .875rem;
+    padding-right: .875rem;
+    margin-right: 1.25rem;
+    background-color: white;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+header .search input {
+    border: 0;
+    min-width: 0;
+    display: inline-block;
+    justify-self: stretch;
+    flex-grow: 1;
+}
+
+header .login {
+    font-size: .75rem;
+    font-family: "Adobe Heiti Std";
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+header .login img {
+    margin-right: .1875rem;
+}
+
+/* header end */
+
+.aside-main-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* aside start */
+
+aside {
+    color: rgb(110, 128, 149);
+    background-color: rgb(43, 46, 61);
+    min-width: 10rem;
+    max-width: 16.25rem;
+    /* 260px/16px */
+    /* 有无必要根据字体大小来决定宽度？字体大小也是以像素为单位，
+    现代浏览器的缩放不是通过改变字体大小而是改变实际像素的大小来
+    实现的，用em只是适应一部分改变浏览器字体大小的用户，当然加上
+    无障碍更友好，不过不加影响不大，也方便切图 
+    用rem也方便用media query改变根节点的font-size来灵活的调节页面
+    各元素的大小*/
+    flex-grow: 1;
+    font-family: "SimSun";
+}
+
+aside .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.125rem;
+    position: relative;
+    right: .625rem;
+}
+
+aside .profile .avatar {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(186, 186, 190);
+    border-radius: 50%;
+}
+
+aside .profile .avatar-wrapper {
+    padding: .1875rem;
+    border-radius: 50%;
+    border: 2px solid rgb(186, 186, 190);
+    margin-right: .625rem;
+}
+
+aside .profile .name {
+    font-size: 1rem;
+    font-family: "SimHei";
+    color: white;
+}
+
+aside .user-info {
+    display: flex;
+    justify-content: center;
+    font-size: .75rem;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 1.3125rem;
+    margin-bottom: 1.3125rem;
+}
+
+aside .user-info .star {
+    padding-right: 1.5rem;
+    border-right: 1px solid #313545;
+}
+
+
+aside .user-info .follower {
+    padding-left: 1.5rem;
+    border-left: 1px solid #313545;
+}
+
+.directory {
+    font-size: .75rem;
+}
+
+.directory .root {
+    padding: 0;
+}
+
+.directory .child {
+    margin-left: 1.875rem;
+}
+
+.directory .root>li {
+    padding: 1.0625rem 0 1.0625rem 2.625rem;
+}
+
+.directory .activate-root,
+.directory .root>li:not(.activate):hover {
+    background-color: #383d4e;
+}
+
+.directory .child>li {
+    margin-top: 1rem;
+}
+
+.directory .child .self {
+    display: flex;
+    align-items: center;
+}
+
+.directory .folder>.self::before {
+    content: "";
+    display: inline-block;
+    border: 2px solid rgb(110, 128, 149);
+    padding: .1875rem;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(-45deg);
+}
+
+.directory .activate-folder>.self::before {
+    transform: rotate(45deg) translateY(-25%);
+}
+
+.directory .folder>.self img {
+    margin-left: .5625rem;
+}
+
+.directory .child img {
+    margin-right: .25rem;
+}
+
+.directory .activate>.self,
+.directory li:not(.activate)>.self:hover {
+    filter: brightness(0) invert(1);
+}
+
+.directory .self:hover {
+    cursor: pointer;
+}
+
+/* aside end */
+
+/* main start */
+
+main {
+    flex-grow: 1;
+    background-color: #eeeded;
+}
+
+/* crumb start */
+
+.crumb {
+    display: flex;
+    align-items: center;
+    padding-left: 1.875rem;
+    font-size: .767375rem;
+    font-family: "SimHei";
+    color: rgb(170, 170, 170);
+    background-color: white;
+}
+
+.crumb a {
+    display: inline-block;
+    color: inherit;
+    padding: .5625rem .25rem;
+}
+
+.crumb .home a {
+    padding-right: .625rem;
+}
+
+.crumb .activate a,
+.crumb a:hover {
+    color: #6898c2;
+}
+
+.crumb li:not(.home)::before {
+    content: "/";
+}
+
+/* crumb end */
+
+.content-wrapper {
+    padding: 1.25rem 3.75rem;
+}
+
+.content-wrapper>* {
+    background-color: transparent;
+}
+
+
+/* query start */
+
+.query {
+    border: 1px solid #dddee0;
+    background-color: white;
+}
+
+.query form {
+    font-size: .75rem;
+    font-family: "SimHei";
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: .6875rem;
+    padding-bottom: .6875rem;
+    max-width: 51rem;
+}
+
+.query .item-id,
+.query .buyer-seller,
+.query .grid-wrapper,
+.query button {
+    margin: .3125rem 0 .3125rem 1.875rem;
+}
+
+.query .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: .3125rem;
+}
+
+.query .grid-wrapper .field-1 {
+    grid-column-end: span 3;
+}
+
+.query .grid-wrapper .field-2 {
+    grid-column-end: span 4;
+}
+
+.query .grid-wrapper>.time,
+.query .grid-wrapper>.finished {
+    margin-left: .6875rem;
+}
+
+.query .field,
+.query .buyer-seller {
+    display: flex;
+    flex-grow: 1;
+}
+
+.query .select-wrapper {
+    flex-grow: 1;
+}
+
+.query .field {
+    height: fit-content;
+    align-items: center;
+}
+
+.query .field label {
+    display: inline-block;
+    padding-right: 1rem;
+}
+
+.query .field-1 {
+    flex-basis: 7.5rem;
+}
+
+.query .field-2 {
+    flex-basis: 10rem;
+}
+
+.query select,
+.query input {
+    flex-grow: 1;
+    height: 1.5rem;
+    border: 1px solid rgb(170, 170, 170);
+    font-size: .75rem;
+    font-family: "SimHei";
+}
+
+.query label {
+    color: rgb(170, 170, 170);
+}
+
+.query input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+}
+
+.query button {
+    display: inline-block;
+    align-self: center;
+}
+
+.query .seller {
+    margin-top: .3125rem;
+}
+
+.query .buyer-seller .exchange {
+    height: fit-content;
+    margin: auto 0;
+    position: relative;
+}
+
+
+/* query end */
+
+/* query-result start */
+
+.query-result {
+    margin-top: .625rem;
+    display: flex;
+    align-items: stretch;
+}
+
+.query-result .result-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4.4375rem, 1fr));
+    margin-left: .3125rem;
+    gap: .3125rem;
+    background-color: inherit;
+    border: 0;
+    flex-grow: 1;
+}
+
+.query-result>*,
+.result-display>* {
+    background-color: white;
+    border: .0625rem solid #dddee0;
+}
+
+.query-result .arrow {
+    padding: .3125rem;
+    border: 2px solid rgb(170, 170, 170);
+    border-left: 0;
+    border-top: 0;
+}
+
+.query-result .arrow-left,
+.query-result .arrow-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .75rem;
+}
+
+.arrow-left .arrow {
+    transform: translateX(25%) rotate(135deg);
+}
+
+.arrow-right .arrow {
+    transform: translateX(-25%) rotate(-45deg);
+}
+
+.arrow-right,
+.history {
+    margin-left: .3125rem;
+}
+
+.result-display>li {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .875rem 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.result-display .time {
+    font-size: .75rem;
+}
+
+.result-display .measurement {
+    color: rgb(170, 170, 170);
+}
+
+.result-display .amount {
+    font-size: 1.3125rem;
+    color: rgb(236, 101, 0);
+}
+
+.result-display .activate,
+.result-display>li:hover {
+    border-top: .25rem solid #4389c9;
+    padding-top: .6875rem;
+}
+
+.query-result .history {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.0625rem 1.25rem;
+    font-size: .75rem;
+    color: rgb(83, 83, 83);
+}
+
+.query-result .history img {
+    margin-right: .75rem;
+}
+
+/* query-result end */
+
+/* per-stat start */
+
+.per-stat {
+    margin: 1.375rem 0 .875rem 0;
+}
+
+.per-stat .title {
+    font-size: .75rem;
+    color: rgb(50, 51, 51);
+}
+
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8.75rem, 1fr));
+    gap: 1.875rem;
+    margin-top: .4375rem;
+}
+
+.stat-cards li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #bfc3c7;
+    padding: .75rem 7.5% .75rem 4.5%;
+}
+
+.per-stat .stat {
+    font-size: .625rem;
+    font-family: "SimHei";
+    line-height: 2;
+    color: rgb(170, 170, 170);
+}
+
+.per-stat .stat .number {
+    font-size: .75rem;
+    color: rgb(50, 51, 51);
+}
+
+.per-stat .item-color {
+    width: 3.8125rem;
+    height: 2.9375rem;
+}
+
+.per-stat .green-item .item-color {
+    background-color: #43b29e;
+}
+
+.per-stat .green-item {
+    border-left: 4px solid #43b29e;
+}
+
+.per-stat .blue-item .item-color {
+    background-color: #388bc2;
+}
+
+.per-stat .blue-item {
+    border-left: 4px solid #388bc2;
+}
+
+.per-stat .red-item .item-color {
+    background-color: #d04a36;
+}
+
+.per-stat .red-item {
+    border-left: 4px solid #d04a36;
+}
+
+.per-stat .yellow-item .item-color {
+    background-color: #e2cd47;
+}
+
+.per-stat .yellow-item {
+    border-left: 4px solid #e2cd47;
+}
+
+/* per-stat end */
+
+/* detail-cards start */
+
+.detail-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .625rem;
+}
+
+.detail-cards>.col-3 {
+    grid-column-end: span 3;
+}
+
+.detail-cards>.col-2 {
+    grid-column-end: span 2;
+}
+
+.detail-cards>* {
+    background-color: white;
+    border: 1px solid #bfc3c7;
+    border-radius: 6px;
+}
+
+.detail-cards>* .header {
+    height: 2.5rem;
+    border-radius: 6px;
+    padding-top: .8125rem;
+    padding-left: 1.25rem;
+    background-color: #f3f5f6;
+    font-size: .75rem;
+    font-family: "SimHei";
+    color: rgb(170, 170, 170);
+}
+
+/* project-group-card start */
+
+.project-group-card .card-content {
+    padding: .8125rem 1.375rem 1.5rem 1.375rem;
+}
+
+.project-group-card .tab-bar {
+    display: flex;
+    font-size: .75rem;
+    color: rgb(83, 83, 83);
+}
+
+.project-group-card .tab-bar>li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+    height: 1.6875rem;
+    max-width: 5.1875rem;
+    margin-right: .25rem;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: #ececef;
+}
+
+.project-group-card .tab-bar .activate {
+    background-color: white;
+    border: 1px solid #bfc3c7;
+    border-bottom: 0;
+}
+
+.project-group-card .tab-bar .activate:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 1px white;
+    /* tab hover border hack */
+}
+
+.project-group-card .tab-content {
+    border: 1px solid #bfc3c7;
+    padding: 1.5625rem 2.3125rem 2.3125rem 1.8125rem;
+}
+
+.project-group-card table {
+    width: 100%;
+}
+
+.project-group-card td {
+    padding-left: calc(12.5% - 2.25rem);
+    /* all aligned center but also aligned
+    left vertically. */
+}
+
+.project-group-card .activate,
+.project-group-card td:hover {
+    background-color: #f4f5f6;
+}
+
+.project-group-card table,
+.project-group-card tr,
+.project-group-card td {
+    border: 1px solid #bfc3c7;
+    border-collapse: collapse;
+    font-size: .75rem;
+    font-family: "SimSun";
+    color: rgb(83, 83, 83);
+    line-height: 2.5;
+}
+
+/* project-group-card end */
+
+/* project-group-detail-card begin */
+
+.project-group-detail-card .card-content {
+    padding: 1.0625rem 2.25rem 2.375rem 2.25rem;
+}
+
+.project-group-detail-card form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.project-group-detail-card .title,
+.project-group-detail-card .descript,
+.project-group-detail-card .flex-wrapper {
+    grid-column: 1 / 4;
+}
+
+.project-group-detail-card .price {
+    grid-column: 1 / 2;
+}
+
+.project-group-detail-card .charge {
+    grid-column: 2 / 4;
+}
+
+.project-group-detail-card form>*:not(.flex-wrapper) {
+    padding-top: .25rem;
+    padding-left: 1rem;
+    border-bottom: 1px solid #bfc3c7;
+}
+
+.project-group-detail-card input,
+.project-group-detail-card textarea {
+    font-size: .75rem;
+    color: rgb(83, 83, 83);
+    width: 100%;
+    /* 注意设为100%时，由于父元素的宽度仍受子元素影响（
+    在这里因为input有个默认的size，即使设置完宽度后应也
+    视为潜在的影响因素），可能产生非预期效果 */
+    border: 0;
+    padding: .5rem 0 .625rem 0;
+}
+
+.project-group-detail-card label {
+    display: block;
+    font-size: .75rem;
+    color: rgb(195, 194, 194);
+}
+
+.project-group-detail-card textarea {
+    resize: none;
+    height: 7.75rem;
+}
+
+.project-group-detail-card .price {
+    border-right: 1px solid #bfc3c7;
+}
+
+.project-group-detail-card .flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .3125rem;
+}
+
+.project-group-detail-card .check-term {
+    display: flex;
+    align-items: center;
+}
+
+.project-group-detail-card .check-term input {
+    width: unset;
+    margin-right: .5rem;
+}
+
+.project-group-detail-card .check-term label {
+    display: inline;
+}
+
+/* project-group-detail-card end */
+
+/* calendar start */
+
+.calendar .content-wrapper {
+    padding: .625rem 1.25rem 1.4375rem 1.25rem;
+}
+
+.calendar .nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar .nav>* {
+    font-size: .75rem;
+    font-family: "SimHei";
+    color: rgb(83, 83, 83);
+    height: 1.375rem;
+    border: 1px solid #bfc3c7;
+}
+
+.calendar .month {
+    min-width: 5.25rem;
+}
+
+.calendar .return {
+    display: flex;
+    align-items: center;
+    padding: 0 .625rem;
+}
+
+.calendar-table table {
+    width: 100%;
+    margin-top: .625rem;
+    border-collapse: collapse;
+}
+
+.calendar-table thead th {
+    border-top: 2px solid #a9cfec;
+    border-bottom: 2px solid #e1e1e1;
+}
+
+.calendar-table table td,
+.calendar-table table th {
+    width: 14.285714%;
+    height: 2.5625rem;
+    font-size: .710063rem;
+    font-weight: normal;
+    font-family: "SimHei";
+    text-align: center;
+}
+
+.calendar-table table .marked {
+    outline: 1px solid #f4c21d;
+    outline-offset: -2px;
+    /* use outline because border collapse set for
+    show the border of thead (border on thead or tr
+    has no effect so be set on th but split child) */
+}
+
+.calendar-table .festival,
+.calendar-table tbody td:nth-child(6) .day-number,
+.calendar-table tbody td:nth-child(7) .day-number {
+    color: rgb(201, 22, 29);
+}
+
+/* calendar end */
+
+/* car-rank start */
+
+.car-rank .card-content {
+    padding: 1.125rem 2.5625rem 0 2.5625rem;
+}
+
+.car-rank table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.car-rank td,
+.car-rank th {
+    border: 1px solid #bfc3c7;
+    font-family: "SimHei";
+    line-height: 2;
+    text-align: center;
+}
+
+.car-rank td {
+    font-size: .75rem;
+    color: rgb(50, 51, 51);
+}
+
+.car-rank th {
+    font-size: .8125rem;
+    color: rgb(35, 24, 21);
+}
+
+.car-rank img {
+    margin-left: 1.3125rem;
+    transform: translateY(-50%);
+}
+
+.car-rank tr:hover {
+    background-color: #f4f5f6;
+    cursor: pointer;
+}
+
+/* car-rank end */
+
+/* main end */
