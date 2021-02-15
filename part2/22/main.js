@@ -1,4 +1,3 @@
-"use strict";
 const root = document.querySelector('.tree-wrapper');
 const buttons = document.querySelectorAll("button");
 function buildTree(curNode, dep) {
@@ -81,4 +80,5 @@ buttons.forEach((value) => {
             break;
     }
 });
+export {};
 //# sourceMappingURL=main.js.map

@@ -1,3 +1,4 @@
+export {};
 const root: HTMLDivElement = document.querySelector('.tree-wrapper') as HTMLDivElement;
 const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll("button");
 function buildTree(curNode: HTMLDivElement, dep: number): void {

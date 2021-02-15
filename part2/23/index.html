@@ -7,12 +7,20 @@
     <style>
         .tree-wrapper,
         .tree-wrapper div {
+            text-align: center;
+            font-size: 12px;
             padding: 5px;
             border: 2px solid black;
             background-color: white;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2px;
+        }
+
+        .tree-wrapper .queried {
+            color: red;
         }
 
         .tree-wrapper {
@@ -20,20 +28,22 @@
             margin: 0 auto;
         }
 
-        .buttons {
+        .operations {
             width: fit-content;
             margin: 0 auto;
         }
+
     </style>
     <script type="module" src="main.js"></script>
 </head>
 
 <body>
     <div class="tree-wrapper"></div>
-    <div class="buttons">
+    <div class="operations">
         <button type="submit" class="front-traversal">前序遍历</button>
         <button type="submit" class="back-traversal">后序遍历</button>
-        <button type="submit" class="middle-traversal">中序遍历</button>
+        <input type="text" name="text" id="text">
+        <button type="submit" class="query">查询</button>
     </div>
 </body>
 
