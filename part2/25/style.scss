@@ -1,0 +1,122 @@
+$main-color: rgb(135, 227, 243);
+$main-font-color: rgb(209, 129, 64);
+$arrow-size: 8px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: $main-font-color;
+    border-color: $main-color;
+}
+
+ol {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+fieldset,
+input,
+button {
+    border-style: solid;
+    border-radius: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: rgb(227, 238, 177);
+    cursor: pointer;
+    transition: background-color 500ms ease;
+
+    &:hover {
+        background-color: rgb(189, 243, 189);
+
+    }
+}
+
+%arrow-right {
+    border: $arrow-size solid transparent;
+    border-left-color: $main-color;
+    transform: none;
+}
+
+%arrow-bottom {
+    border: $arrow-size solid transparent;
+    border-top-color: $main-color;
+    transform: translateY(25%);
+}
+
+.tree-component {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.tree-component .name {
+    width: fit-content;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+
+    &:hover {
+        background-color: $main-color;
+    }
+
+    &.queried {
+        color: rgb(226, 19, 19);
+        font-weight: bold;
+    }
+}
+
+.directory {
+    %list-arrow {
+        position: absolute;
+        display: inline-block;
+        content: '';
+    }
+
+    >.name {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: $main-font-color;
+    }
+
+    >.name::before {
+        @extend %arrow-bottom;
+        @extend %list-arrow;
+        left: -($arrow-size * 2 + 3px);
+    }
+}
+
+.directory.collapsed {
+    >ol {
+        display: none;
+    }
+
+    >.name::before {
+        @extend %arrow-right;
+        left: -($arrow-size + 5px);
+    }
+}
+
+.item>.name {
+    color: rgb(165, 164, 82);
+}
+
+.selected {
+    background-color: rgb(221, 231, 227);
+}
+
+.tree-form {
+    width: 50%;
+    margin: 0 auto;
+
+    fieldset {
+        display: flex;
+        gap: 5px;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    label {
+        align-self: center;
+    }
+}
