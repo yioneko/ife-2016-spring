@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .destroyed {
+        display: none;
+      }
+
+      .space {
+        background-color: rgb(198, 201, 202);
+      }
+
+      .dynamic-select,
+      .energy-select {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+    <script type="module" src="main.ts"></script>
+  </head>
+
+  <body>
+    <canvas class="space"></canvas>
+    <div class="console">
+      <form class="create-console">
+        <div class="dynamic-select">
+          <div class="title">动力系统选择</div>
+          <div class="type-1">
+            <input type="radio" name="dynamic" id="type-1" value="1" checked />
+            <label for="type-1">前进号（速率30px/s,能耗5%/s）</label>
+          </div>
+          <div class="type-2">
+            <input type="radio" name="dynamic" id="type-2" value="2" />
+            <label for="type-2">奔腾号（速率50px/s,能耗7%/s）</label>
+          </div>
+          <div class="type-3">
+            <input type="radio" name="dynamic" id="type-3" value="3" />
+            <label for="type-3">超越号（速率80px/s,能耗9%/s）</label>
+          </div>
+        </div>
+        <div class="energy-select">
+          <div class="title">能源系统选择</div>
+          <div class="type-1">
+            <input type="radio" name="energy" id="type-1" value="1" checked />
+            <label for="type-1">劲量型（补充能源速度2%/s）</label>
+          </div>
+          <div class="type-2">
+            <input type="radio" name="energy" id="type-2" value="2" />
+            <label for="type-2">光能型（补充能源速度3%/s）</label>
+          </div>
+          <div class="type-3">
+            <input type="radio" name="energy" id="type-3" value="3" />
+            <label for="type-3">永久型（补充能源速度4%/s）</label>
+          </div>
+        </div>
+        <button class="create-button" type="button">创建新飞船</button>
+      </form>
+      <div class="control-console"></div>
+    </div>
+    <div class="msg">
+      <div class="try-info"></div>
+      <div class="command"></div>
+    </div>
+  </body>
+</html>

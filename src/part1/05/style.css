@@ -1,0 +1,131 @@
+html {
+  background-color: #a3a3a32f;
+}
+
+body {
+  margin: 0;
+}
+
+.top {
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+.top header {
+  padding: 0 0.5rem;
+  flex: 1;
+}
+
+.top ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.top a {
+  text-decoration: none;
+  color: rgb(148, 137, 137);
+  padding: 0 0.5rem;
+}
+
+.top a:hover {
+  color: white;
+}
+
+article,
+section,
+aside {
+  padding: 0.5rem 2rem;
+  margin: 1.5rem;
+  background-color: white;
+  box-shadow: 0.5rem 0.5rem 0.5rem gray;
+}
+
+main {
+  float: left;
+  width: calc(100% - 27rem);
+}
+
+aside {
+  float: left;
+  width: 20rem;
+}
+
+article h3,
+aside h3,
+.picset h3 {
+  color: #0e0e0ebe;
+}
+
+.author_and_time {
+  font-size: 0.3rem;
+  color: #141414a6;
+}
+
+.pictures {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.pictures .picture {
+  border: 1px solid gray;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+table {
+  width: 100%;
+  margin: auto 0;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: black;
+  color: white;
+}
+
+tfoot {
+  background-color: gray;
+}
+
+.input_wrapper {
+  width: 100%;
+}
+
+label.outer_label {
+  font-weight: bold;
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+}
+
+.mail p,
+.pwd p {
+  color: #141414a6;
+  font-size: 0.7rem;
+  padding-left: 40%;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(51, 51, 223);
+  color: white;
+  border: 2px solid rgba(129, 116, 116, 0.822);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+footer {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+  clear: both;
+}

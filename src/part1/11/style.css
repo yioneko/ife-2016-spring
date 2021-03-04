@@ -1,0 +1,213 @@
+* {
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  background-color: #f5f5f5;
+}
+
+body > * {
+  background-color: white;
+}
+
+header {
+  position: relative;
+  background-color: #91d4da;
+  display: flex;
+  justify-content: center;
+}
+
+header .back {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+header .back::before {
+  content: "";
+  display: inline-block;
+  border: 6px solid white;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(135deg);
+  padding: 0.4rem;
+  margin-right: -0.125rem;
+}
+
+header h1 {
+  line-height: 2.8;
+  color: white;
+  font-weight: normal;
+}
+
+.nav {
+  display: flex;
+  justify-content: stretch;
+}
+
+.nav > * {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .active {
+  border-bottom: 7px solid #90d3d9;
+}
+
+.nav a {
+  color: #686868;
+  line-height: 2.8;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.tags-wrapper {
+  padding: 1.175rem 0.7rem;
+}
+
+.tags {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 4px solid #dedede;
+}
+
+.tags > * {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.tags span {
+  line-height: 2.8;
+}
+
+.columns {
+  padding: 0 0.7rem 1rem 0.7rem;
+  display: flex;
+  justify-content: stretch;
+}
+
+.columns > * {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: column;
+  align-items: center;
+  border-left: 4px solid #dedede;
+}
+
+.columns > li:nth-of-type(1) {
+  border-left: 0;
+}
+
+.columns h2,
+.columns h3 {
+  font-weight: normal;
+  line-height: 1.8;
+}
+
+.columns h3 {
+  font-size: 0.8rem;
+  color: #5c5c5c;
+}
+
+.module {
+  margin-top: 0.9rem;
+  padding: 0.625rem 0.775rem;
+}
+
+.module h2 {
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: 2.8;
+  color: #646464;
+  border-bottom: 4px solid #dedede;
+}
+
+.sub-module {
+  margin-top: 0.675rem;
+  display: flex;
+}
+
+.sub-module .buttons {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+  margin-left: 0.625rem;
+}
+
+.sub-module .button {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #484848;
+  background-color: #f8f8f8;
+}
+
+.articles {
+  margin-top: 0.675rem;
+  background-color: transparent;
+}
+
+.articles .flex-wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 197px; /* height of adjacent image */
+}
+
+.articles h3 {
+  font-weight: normal;
+  color: #666666;
+}
+
+.articles .info {
+  font-size: 0.775rem;
+  color: #c7c7c7;
+  justify-self: flex-end;
+  margin-top: auto; /* must be included to make justify to end take effect */
+}
+
+.articles > * {
+  margin-bottom: 4px;
+  background-color: white;
+  padding: 0.55rem 0.75rem;
+}
+
+.article-1::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.article-1 img {
+  float: left;
+  margin-right: 0.75rem;
+}
+
+.article-2 .imgs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+  margin-bottom: 0.675rem;
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      body > * {
+        margin: 20px auto;
+      }
+
+      table thead {
+        text-align: left;
+        background-color: black;
+        color: white;
+      }
+
+      table tbody tr:nth-of-type(2n) {
+        background-color: rgb(214, 213, 213);
+      }
+
+      table .highlighted {
+        color: red;
+      }
+
+      input {
+        width: 20%;
+        display: block;
+        transition: width 2s ease-out;
+      }
+
+      input:focus {
+        width: 40%;
+      }
+
+      .slider,
+      .slides,
+      .slides > * {
+        width: 200px;
+        height: 100px;
+      }
+
+      .slider {
+        position: relative;
+      }
+
+      #slide-1 {
+        background-color: green;
+      }
+
+      #slide-2 {
+        background-color: blue;
+      }
+
+      #slide-3 {
+        background-color: red;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .nav {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        justify-content: space-between;
+        animation: scroll 9s infinite;
+      }
+
+      .nav > * {
+        width: 25px;
+        height: 25px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      ol {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .slides {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        /* 超链接会自动滚动到相应位置，设定为smooth可以实现平滑滚动效果 */
+      }
+
+      .slides > * {
+        flex-shrink: 0;
+      }
+      /* 自动播放动画效果不会。。。（看不懂网上大佬的代码） */
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th>网站</th>
+          <th>热度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlighted">
+          <td>1.</td>
+          <td>百度前端技术学院</td>
+          <td>13000</td>
+        </tr>
+        <tr class="highlighted">
+          <td>2.</td>
+          <td>百度前端技术学院</td>
+          <td>12000</td>
+        </tr>
+        <tr class="highlighted">
+          <td>3.</td>
+          <td>百度前端技术学院</td>
+          <td>11000</td>
+        </tr>
+        <tr>
+          <td>4.</td>
+          <td>百度前端技术学院</td>
+          <td>10000</td>
+        </tr>
+        <tr>
+          <td>5.</td>
+          <td>百度前端技术学院</td>
+          <td>9000</td>
+        </tr>
+        <tr>
+          <td>6.</td>
+          <td>百度前端技术学院</td>
+          <td>8000</td>
+        </tr>
+        <tr>
+          <td>7.</td>
+          <td>百度前端技术学院</td>
+          <td>7000</td>
+        </tr>
+        <tr>
+          <td>8.</td>
+          <td>百度前端技术学院</td>
+          <td>6000</td>
+        </tr>
+        <tr>
+          <td>9.</td>
+          <td>百度前端技术学院</td>
+          <td>5000</td>
+        </tr>
+        <tr>
+          <td>10.</td>
+          <td>百度前端技术学院</td>
+          <td>4000</td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="text" name="" id="" />
+    <div class="slider">
+      <ol class="nav">
+        <li><a href="#slide-1">1</a></li>
+        <li><a href="#slide-2">2</a></li>
+        <li><a href="#slide-3">3</a></li>
+      </ol>
+      <ol class="slides">
+        <div id="slide-1"></div>
+        <div id="slide-2"></div>
+        <div id="slide-3"></div>
+      </ol>
+    </div>
+  </body>
+</html>

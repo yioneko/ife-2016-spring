@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      body > * {
+        margin: 0 auto;
+        width: fit-content;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="input-wrapper">
+      <input type="text" name="number" id="number" />
+      <button class="left-in">左侧入</button>
+      <button class="right-in">右侧入</button>
+      <button class="left-out">左侧出</button>
+      <button class="right-out">右侧出</button>
+    </div>
+    <div class="queue" style="display: flex"></div>
+    <script>
+      const queue = document.querySelector(".queue");
+      function generateDiv(number) {
+        console.log(number);
+        const div = document.createElement("div");
+        div.textContent = number;
+        div.style =
+          "display: flex; align-items: center; justify-content: center; padding: 5px;\
+                background-color: red; margin: 5px; color: white";
+        div.addEventListener("click", function () {
+          this.parentNode.removeChild(this);
+        });
+        return div;
+      }
+
+      function validateNumber() {
+        const text = document.querySelector("#number").value;
+        if (!text.match(/^\d+$/)) return;
+        else return parseInt(text);
+      }
+
+      document.querySelector(".left-in").addEventListener("click", function () {
+        const number = validateNumber();
+        if (number !== undefined) {
+          queue.prepend(generateDiv(number));
+        }
+      });
+      document
+        .querySelector(".right-in")
+        .addEventListener("click", function () {
+          const number = validateNumber();
+          if (number !== undefined) {
+            queue.appendChild(generateDiv(number));
+          }
+        });
+      document
+        .querySelector(".left-out")
+        .addEventListener("click", function () {
+          alert("You deleted: " + queue.firstChild.textContent);
+          queue.removeChild(queue.firstChild);
+        });
+      document
+        .querySelector(".right-out")
+        .addEventListener("click", function () {
+          alert("You deleted: " + queue.lastChild.textContent);
+          queue.removeChild(queue.lastChild);
+        });
+    </script>
+  </body>
+</html>
