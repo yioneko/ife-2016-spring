@@ -1,0 +1,61 @@
+$input-line-height: 2.5;
+.name-form {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  min-width: 520px;
+}
+
+.validation-button {
+  $left-right-padding: 15px;
+  padding-right: $left-right-padding;
+  padding-left: $left-right-padding;
+  color: rgb(255, 255, 255);
+  line-height: $input-line-height;
+  background-color: rgb(45, 145, 212);
+  border: 2px solid rgb(38, 87, 179);
+  border-radius: 5px;
+  outline: 0;
+
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    border-style: inset;
+  }
+}
+
+.input-with-hint {
+  position: relative;
+  flex-grow: 1;
+
+  input {
+    width: 100%;
+    line-height: $input-line-height;
+    border: 2px solid;
+    border-radius: 5px;
+    outline: 0;
+  }
+
+  .hint {
+    position: absolute;
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+}
+
+@mixin input-state($state, $color) {
+  .input-with-hint.#{$state} {
+    input {
+      border-color: $color;
+    }
+
+    .hint {
+      color: $color;
+    }
+  }
+}
+
+@include input-state("normal", rgb(182, 182, 182));
+@include input-state("error", rgb(227, 61, 15));
+@include input-state("pass", rgb(14, 179, 27));
