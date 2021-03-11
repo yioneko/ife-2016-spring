@@ -1,0 +1,72 @@
+@use "DemoForm.scss" as form;
+
+$input-line-height: 2;
+$main-color: form.$main-color;
+$grey: rgb(182, 182, 182);
+.input-field {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: margin 300ms linear;
+
+  label {
+    display: block;
+    width: 4rem;
+    text-align: right;
+  }
+}
+
+.input-with-hint {
+  position: relative;
+  flex-grow: 1;
+
+  input {
+    width: 100%;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    line-height: $input-line-height;
+    border: 1px solid $grey;
+    border-radius: 5px;
+    outline: 0;
+  }
+
+  .hint {
+    position: absolute;
+    z-index: -100;
+    color: $grey;
+    font-size: 0.9rem;
+    line-height: 2;
+    transform: translateY(-100%);
+    transition: transform 300ms linear;
+  }
+}
+
+.input-with-hint input:focus {
+  border-color: $main-color;
+  box-shadow: 0 0 5px 2px $grey;
+}
+
+.input-field-focused {
+  margin-bottom: 40px;
+
+  .hint {
+    transform: none;
+  }
+}
+
+@mixin input-state($state, $color) {
+  .input-with-hint.#{$state} {
+    input {
+      border-color: $color;
+    }
+
+    .hint {
+      color: $color;
+    }
+  }
+}
+
+@include input-state("error", rgb(227, 61, 15));
+@include input-state("pass", rgb(14, 179, 27));

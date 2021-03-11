@@ -1,0 +1,18 @@
+$main-color: rgb(47, 121, 186);
+.demo-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+.submit-button {
+  align-self: flex-end;
+  padding: 10px 25px;
+  color: rgb(245, 245, 245);
+  font-size: 1rem;
+  background-color: $main-color;
+  border: 0;
+  border-radius: 6px;
+}
