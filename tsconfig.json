@@ -9,6 +9,7 @@
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
     "jsx": "react-jsx"
   },
   "include": ["src"]

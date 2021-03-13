@@ -1,0 +1,19 @@
+.figure-select, .school-select {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.company-input {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.figure-select {
+  margin-bottom: 20px;
+}
+
+.company-input label,
+.school-select label {
+  margin-right: 10px;
+}
