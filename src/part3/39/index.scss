@@ -1,0 +1,15 @@
+@use "./Table.scss";
+
+@include Table.style();
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fill {
+  width: 50vw;
+  height: 200vh;
+  background: linear-gradient(#db6161, #21f11a);
+}

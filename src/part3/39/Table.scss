@@ -1,0 +1,57 @@
+$table-border-color: #8f8c8c !default;
+$arrow-color: #98c8e4 !default;
+$heading-background-color: #e4d86c !default;
+$heading-text-color: #c08b59 !default;
+$body-background-color: #77df58 !default;
+$body-text-color: #4c4b97 !default;
+$cell-hover-color: #7ae9da !default;
+
+$arrow-size: 0.7em;
+
+@mixin style() {
+  table,
+  td,
+  th {
+    border: 2px solid $table-border-color;
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    min-width: 5rem;
+    padding: 5px 0;
+    text-align: center;
+
+    &:hover {
+      background-color: $cell-hover-color;
+    }
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    color: $heading-text-color;
+    background-color: $heading-background-color;
+    cursor: pointer;
+  }
+
+  td {
+    color: $body-text-color;
+    background-color: $body-background-color;
+  }
+
+  .sorted::after {
+    position: absolute;
+    top: calc(50% - 0.5 * #{$arrow-size});
+    display: inline-block;
+    border-top: $arrow-size solid $arrow-color;
+    border-right: $arrow-size * 0.7 solid transparent;
+    border-left: $arrow-size * 0.7 solid transparent;
+    transition: transform 300ms;
+    content: "";
+  }
+
+  .sorted-ascending::after {
+    transform: rotate(180deg);
+  }
+}
