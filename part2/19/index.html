@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      body > * {
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .queue {
+        display: flex;
+        align-items: flex-end;
+        height: 120px;
+      }
+
+      .queue > * {
+        width: 20px;
+        margin: 3px;
+        background-color: red;
+      }
+    </style>
+  <script type="module" crossorigin src="/ife-2016-spring/assets/index.1b1157ac11.js"></script>
+  <link rel="modulepreload" href="/ife-2016-spring/assets/dynamic-import-polyfill.301f8c0f.js">
+</head>
+
+  <body>
+    <div class="input-wrapper">
+      <input type="text" name="number" id="number" />
+      <button class="left-in">左侧入</button>
+      <button class="right-in">右侧入</button>
+      <button class="left-out">左侧出</button>
+      <button class="right-out">右侧出</button>
+      <button class="sort">排序</button>
+    </div>
+    <div class="queue" style="display: flex"></div>
+    <script>
+      const queue = document.querySelector(".queue");
+      function generateDiv(number) {
+        const div = document.createElement("div");
+        div.style.height = number + "px";
+        div.addEventListener("click", function () {
+          this.parentNode.removeChild(this);
+        });
+        return div;
+      }
+
+      function validateNumber() {
+        const text = document.querySelector("#number").value;
+        if (!text.match(/^\d+$/)) return;
+        else {
+          const number = parseInt(text);
+          if (number >= 10 && number <= 100) {
+            return number;
+          } else return;
+        }
+      }
+
+      document.querySelector(".left-in").addEventListener("click", function () {
+        if (queue.childElementCount === 60) {
+          alert("Already up to 60 nodes");
+          return;
+        }
+        const number = validateNumber();
+        if (number !== undefined) {
+          queue.prepend(generateDiv(number));
+        }
+      });
+      document
+        .querySelector(".right-in")
+        .addEventListener("click", function () {
+          if (queue.childElementCount === 60) {
+            alert("Already up to 60 nodes");
+            return;
+          }
+          const number = validateNumber();
+          if (number !== undefined) {
+            queue.appendChild(generateDiv(number));
+          }
+        });
+      document
+        .querySelector(".left-out")
+        .addEventListener("click", function () {
+          alert("You deleted: " + parseInt(queue.firstChild.style.height));
+          queue.removeChild(queue.firstChild);
+        });
+      document
+        .querySelector(".right-out")
+        .addEventListener("click", function () {
+          alert("You deleted: " + parseInt(queue.lastChild.style.height));
+          queue.removeChild(queue.lastChild);
+        });
+      document.querySelector(".sort").addEventListener("click", function () {
+        document
+          .querySelectorAll("button")
+          .forEach((value) => value.setAttribute("disabled", ""));
+        let i = 1,
+          j = 0,
+          pre1,
+          pre2,
+          lst;
+        function swapAnim(timestamp) {
+          if (lst === undefined || timestamp - lst >= 500) {
+            if (pre1) pre1.style.backgroundColor = null;
+            if (pre2) pre2.style.backgroundColor = null;
+            const node1 = queue.childNodes[j],
+              node2 = queue.childNodes[j + 1];
+            node1.style.backgroundColor = "green";
+            node2.style.backgroundColor = "green";
+            if (parseInt(node1.style.height) > parseInt(node2.style.height)) {
+              node1.before(node2);
+            }
+
+            if (j === queue.childElementCount - i - 1) {
+              ++i;
+              if (i === queue.childElementCount) {
+                node1.style.backgroundColor = null;
+                node2.style.backgroundColor = null;
+                document
+                  .querySelectorAll("button")
+                  .forEach((value) => value.removeAttribute("disabled"));
+                return;
+              }
+              j = 0;
+            } else ++j;
+            (pre1 = node1), (pre2 = node2);
+            lst = timestamp;
+          }
+          requestAnimationFrame(swapAnim);
+        }
+        requestAnimationFrame(swapAnim);
+      });
+    </script>
+  </body>
+</html>

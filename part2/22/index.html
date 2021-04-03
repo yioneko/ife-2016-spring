@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .tree-wrapper,
+      .tree-wrapper div {
+        padding: 5px;
+        border: 2px solid black;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+      }
+
+      .tree-wrapper {
+        width: 60%;
+        margin: 0 auto;
+      }
+
+      .buttons {
+        width: fit-content;
+        margin: 0 auto;
+      }
+    </style>
+    
+  <script type="module" crossorigin src="/ife-2016-spring/assets/index.dcc4c6e0.js"></script>
+  <link rel="modulepreload" href="/ife-2016-spring/assets/dynamic-import-polyfill.301f8c0f.js">
+</head>
+
+  <body>
+    <div class="tree-wrapper"></div>
+    <div class="buttons">
+      <button type="submit" class="front-traversal">前序遍历</button>
+      <button type="submit" class="back-traversal">后序遍历</button>
+      <button type="submit" class="middle-traversal">中序遍历</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      body > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .queue {
+        display: flex;
+        padding: 0;
+      }
+
+      .queue > li {
+        margin: 2px;
+        padding: 3px;
+        color: white;
+        list-style-type: none;
+        background-color: #79d7fc;
+        cursor: pointer;
+      }
+
+      .queue > li:hover {
+        background-color: red;
+      }
+
+      .queue > li:hover::before {
+        content: "点击删除";
+      }
+    </style>
+    
+  <script type="module" crossorigin src="/ife-2016-spring/assets/index.eb9e1c01.js"></script>
+  <link rel="modulepreload" href="/ife-2016-spring/assets/dynamic-import-polyfill.301f8c0f.js">
+</head>
+
+  <body>
+    <div class="tag-1">
+      <fieldset>
+        <label for="tag-input">Tag:</label>
+        <input type="text" name="tag-input" id="tag-input" />
+      </fieldset>
+      <ul class="queue"></ul>
+    </div>
+    <div class="tag-2">
+      <textarea name="tag-area" id="tag-area" cols="30" rows="10"></textarea>
+      <button type="submit">确认兴趣爱好</button>
+      <ul class="queue"></ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .wrapper {
+        position: relative;
+        margin: auto;
+        padding: 10% 20%;
+        overflow: hidden;
+        background-color: rgb(155, 154, 152);
+      }
+
+      .left {
+        position: absolute;
+        /* 这里百分比相对的是父元素的宽度 */
+        top: -30%;
+        /* 这里百分比相对的是父元素的高度 */
+        left: -15%;
+        padding: 15%;
+        background-color: yellow;
+        border-radius: 50%;
+      }
+
+      .right {
+        position: absolute;
+        right: -15%;
+        bottom: -30%;
+        padding: 15%;
+        background-color: yellow;
+        border-radius: 50%;
+      }
+    </style>
+  <script type="module" crossorigin src="/ife-2016-spring/assets/index.1b1157ac4.js"></script>
+  <link rel="modulepreload" href="/ife-2016-spring/assets/dynamic-import-polyfill.301f8c0f.js">
+</head>
+
+  <body>
+    <div class="wrapper">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>
