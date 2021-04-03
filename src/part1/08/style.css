@@ -5,9 +5,9 @@
 }
 
 .grid-wrapper > * {
-  border: 1px solid #999;
-  background-color: #eee;
   height: 50px;
+  background-color: #eee;
+  border: 1px solid #999;
 }
 
 .col-2 {

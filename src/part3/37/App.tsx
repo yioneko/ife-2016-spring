@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FloatCover } from "./FloatCover";
 import "./App.scss";
+import { FloatCover } from "./FloatCover";
 
 export function App(): React.ReactElement {
     const [floatIn, setFloatIn] = useState(false);

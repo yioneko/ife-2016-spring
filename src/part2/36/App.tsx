@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useState } from "react";
 import "./App.scss";
 import { Board } from "./Board";
-import { CommandEditor } from "./CommandEditor";
 import { useBoardCommandEditor } from "./boardCommandEditor";
+import { CommandEditor } from "./CommandEditor";
 import { useReset } from "./utils";
 
 export function App(): React.ReactElement {

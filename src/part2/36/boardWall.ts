@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer, useMemo } from "react";
+import React, { useCallback, useMemo, useReducer } from "react";
 import { WallReducerAction, WallTable } from "./types";
 import { fillTowDimensionArray, validateColor } from "./utils";
 
@@ -10,7 +10,7 @@ export function useBoardWall(props: {
     boardCtx: () => CanvasRenderingContext2D;
     unitLength: () => number;
 }): {
-        dispatch: React.Dispatch<WallReducerAction>;
+    dispatch: React.Dispatch<WallReducerAction>;
     wall: WallTable;
     drawWall: () => void;
     wallBuildColor: string;

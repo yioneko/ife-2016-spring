@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { ChessCmdQueue, DirectionsType } from "./types";
 import { useCommand, useEditor } from "./CommandEditor";
+import { ChessCmdQueue, DirectionsType } from "./types";
 import { validateColor } from "./utils";
 
 interface BoardCommandEditorPack {

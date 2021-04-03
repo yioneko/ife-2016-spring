@@ -1,3 +1,4 @@
+export {};
 const queue1 = document.querySelector(".tag-1 .queue");
 const queue2 = document.querySelector(".tag-2 .queue");
 

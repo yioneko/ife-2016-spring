@@ -1,8 +1,8 @@
-import React, { useCallback, useRef, useEffect } from "react";
-import { useChess } from "./chess";
-import { BoardProps } from "./types";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useBoardWall } from "./boardWall";
+import { useChess } from "./chess";
 import { useRandomWall } from "./randomWall";
+import { BoardProps } from "./types";
 
 export const Board = React.memo(function Board(
     props: BoardProps
@@ -141,13 +141,9 @@ export const Board = React.memo(function Board(
 
         ctx.save();
         ctx.translate(meshOrigin[0], meshOrigin[1]);
-
     }, []);
 
-    const {
-        animPromiseRef,
-        state: chessState,
-    } = useChess({
+    const { animPromiseRef, state: chessState } = useChess({
         boardCtx: lazyBoardCtx,
         unitLength: lazyUnitLength,
         wallBuildColor,

@@ -2,14 +2,14 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>21</title>
     <style>
       body > * {
-        width: 80%;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 80%;
+        margin: 0 auto;
       }
 
       .queue {
@@ -18,11 +18,11 @@
       }
 
       .queue > li {
+        margin: 2px;
+        padding: 3px;
+        color: white;
         list-style-type: none;
         background-color: #79d7fc;
-        color: white;
-        padding: 3px;
-        margin: 2px;
         cursor: pointer;
       }
 
@@ -34,6 +34,7 @@
         content: "点击删除";
       }
     </style>
+    <script type="module" src="./main.js"></script>
   </head>
 
   <body>
@@ -49,6 +50,5 @@
       <button type="submit">确认兴趣爱好</button>
       <ul class="queue"></ul>
     </div>
-    <script src="main.js"></script>
   </body>
 </html>

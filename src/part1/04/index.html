@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
+    <title>04</title>
     <style>
       body {
-        height: 100vh;
         display: flex;
         justify-content: center;
+        height: 100vh;
       }
 
       .wrapper {
-        padding: 10% 20%;
-        background-color: rgb(155, 154, 152);
-        margin: auto;
         position: relative;
+        margin: auto;
+        padding: 10% 20%;
         overflow: hidden;
+        background-color: rgb(155, 154, 152);
       }
 
       .left {
         position: absolute;
-        padding: 15%;
         /* 这里百分比相对的是父元素的宽度 */
         top: -30%;
         /* 这里百分比相对的是父元素的高度 */
         left: -15%;
-        border-radius: 50%;
+        padding: 15%;
         background-color: yellow;
+        border-radius: 50%;
       }
 
       .right {
         position: absolute;
-        padding: 15%;
-        bottom: -30%;
         right: -15%;
-        border-radius: 50%;
+        bottom: -30%;
+        padding: 15%;
         background-color: yellow;
+        border-radius: 50%;
       }
     </style>
   </head>

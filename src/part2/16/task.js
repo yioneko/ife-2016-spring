@@ -1,3 +1,5 @@
+export {};
+
 function validateData() {
     let city = document.querySelector("#aqi-city-input").value;
     let quality = document.querySelector("#aqi-value-input").value;
@@ -35,9 +37,9 @@ document.querySelector("#add-btn").addEventListener(
                 let newRow = rowTemplate.content.firstElementChild.cloneNode(
                     true
                 );
-                /* the HTMLTemplateElement has a content property, which is a read-only DocumentFragment 
-             containing the DOM subtree which the template represents. Note that directly using the 
-             value of the content could lead to unexpected behavior. A DocumentFragment is not a valid 
+                /* the HTMLTemplateElement has a content property, which is a read-only DocumentFragment
+             containing the DOM subtree which the template represents. Note that directly using the
+             value of the content could lead to unexpected behavior. A DocumentFragment is not a valid
              target for various event. （没仔细看文档被搞了...用content返回的是一个不完全的DocumentFragment对象）
             */
                 const td = newRow.querySelectorAll("td");

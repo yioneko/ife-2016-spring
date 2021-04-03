@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from "react";
 import {
     ContentBlock,
     ContentState,
     Editor,
     EditorBlock,
-    EditorState,
     EditorProps,
+    EditorState,
 } from "draft-js";
 import "draft-js/dist/Draft.css";
+import React, { useCallback, useState } from "react";
 import "./CommandEditor.scss";
 
 function LineBlockWithNumber(props: {
@@ -89,15 +89,14 @@ export function useCommand<Cmd>(
                     if (command) {
                         if (command instanceof Array) {
                             newCmdQueue.push(...command);
-                        }
-                        else newCmdQueue.push(command);
+                        } else newCmdQueue.push(command);
                     }
                 }
             });
 
         setCmdQueue((prevState) => {
             return prevState.concat(newCmdQueue);
-        })
+        });
     }, [cmdConverter, setCmdQueue, editorState]);
 
     return {
@@ -105,7 +104,9 @@ export function useCommand<Cmd>(
     };
 }
 
-export const CommandEditor = React.memo(function CommandEditor(props: EditorProps): React.ReactElement {
+export const CommandEditor = React.memo(function CommandEditor(
+    props: EditorProps
+): React.ReactElement {
     return (
         <div className="editor-with-scroll">
             <div className="line-number-column"></div>

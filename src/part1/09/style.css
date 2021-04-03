@@ -1,7 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 a {
@@ -13,52 +13,52 @@ ul {
 }
 
 button[type="submit"] {
+  padding: 0.4375rem 0.875rem;
   color: white;
   background-color: #388ac2;
   border: 0;
   border-radius: 3px;
-  padding: 0.4375rem 0.875rem;
 }
 
 /* header start */
 
 header {
-  height: 3.4375rem;
-  padding-left: 3.125rem;
-  padding-right: 5.625rem;
-  background-color: rgb(33, 137, 191);
   display: flex;
   align-items: center;
+  height: 3.4375rem;
+  padding-right: 5.625rem;
+  padding-left: 3.125rem;
+  background-color: rgb(33, 137, 191);
 }
 
 header .search {
+  display: flex;
+  align-items: center;
   width: 24.609375%;
   /* 315px/1280px */
   height: 1.75rem;
-  border-radius: 0.875rem;
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
   margin-right: 1.25rem;
-  background-color: white;
   margin-left: auto;
-  display: flex;
-  align-items: center;
+  padding-right: 0.875rem;
+  padding-left: 0.875rem;
+  background-color: white;
+  border-radius: 0.875rem;
 }
 
 header .search input {
-  border: 0;
-  min-width: 0;
   display: inline-block;
-  justify-self: stretch;
   flex-grow: 1;
+  justify-self: stretch;
+  min-width: 0;
+  border: 0;
 }
 
 header .login {
-  font-size: 0.75rem;
-  font-family: "Adobe Heiti Std";
   display: flex;
   align-items: center;
   color: white;
+  font-size: 0.75rem;
+  font-family: "Adobe Heiti Std";
 }
 
 header .login img {
@@ -75,27 +75,27 @@ header .login img {
 /* aside start */
 
 aside {
-  color: rgb(110, 128, 149);
-  background-color: rgb(43, 46, 61);
-  min-width: 10rem;
   /* 260px/16px */
   /* 有无必要根据字体大小来决定宽度？字体大小也是以像素为单位，
     现代浏览器的缩放不是通过改变字体大小而是改变实际像素的大小来
     实现的，用em只是适应一部分改变浏览器字体大小的用户，当然加上
-    无障碍更友好，不过不加影响不大，也方便切图 
+    无障碍更友好，不过不加影响不大，也方便切图
     用rem也方便用media query改变根节点的font-size来灵活的调节页面
     各元素的大小*/
   flex-grow: 1;
+  min-width: 10rem;
+  color: rgb(110, 128, 149);
   font-family: "SimSun";
+  background-color: rgb(43, 46, 61);
 }
 
 aside .profile {
+  position: relative;
+  right: 0.625rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1.125rem;
-  position: relative;
-  right: 0.625rem;
 }
 
 aside .profile .avatar {
@@ -106,26 +106,26 @@ aside .profile .avatar {
 }
 
 aside .profile .avatar-wrapper {
-  padding: 0.1875rem;
-  border-radius: 50%;
-  border: 2px solid rgb(186, 186, 190);
   margin-right: 0.625rem;
+  padding: 0.1875rem;
+  border: 2px solid rgb(186, 186, 190);
+  border-radius: 50%;
 }
 
 aside .profile .name {
+  color: white;
   font-size: 1rem;
   font-family: "SimHei";
-  color: white;
 }
 
 aside .user-info {
   display: flex;
   justify-content: center;
-  font-size: 0.75rem;
-  text-align: center;
-  line-height: 1.5;
   margin-top: 1.3125rem;
   margin-bottom: 1.3125rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
 aside .user-info .star {
@@ -169,13 +169,13 @@ aside .user-info .follower {
 }
 
 .directory .folder > .self::before {
-  content: "";
   display: inline-block;
-  border: 2px solid rgb(110, 128, 149);
   padding: 0.1875rem;
-  border-left: 0;
+  border: 2px solid rgb(110, 128, 149);
   border-top: 0;
+  border-left: 0;
   transform: rotate(-45deg);
+  content: "";
 }
 
 .directory .activate-folder > .self::before {
@@ -214,16 +214,16 @@ main {
   display: flex;
   align-items: center;
   padding-left: 1.875rem;
+  color: rgb(170, 170, 170);
   font-size: 0.767375rem;
   font-family: "SimHei";
-  color: rgb(170, 170, 170);
   background-color: white;
 }
 
 .crumb a {
   display: inline-block;
-  color: inherit;
   padding: 0.5625rem 0.25rem;
+  color: inherit;
 }
 
 .crumb .home a {
@@ -252,18 +252,18 @@ main {
 /* query start */
 
 .query {
-  border: 1px solid #dddee0;
   background-color: white;
+  border: 1px solid #dddee0;
 }
 
 .query form {
-  font-size: 0.75rem;
-  font-family: "SimHei";
   display: flex;
   flex-flow: row wrap;
+  max-width: 51rem;
   padding-top: 0.6875rem;
   padding-bottom: 0.6875rem;
-  max-width: 51rem;
+  font-size: 0.75rem;
+  font-family: "SimHei";
 }
 
 .query .item-id,
@@ -303,8 +303,8 @@ main {
 }
 
 .query .field {
-  height: fit-content;
   align-items: center;
+  height: fit-content;
 }
 
 .query .field label {
@@ -324,9 +324,9 @@ main {
 .query input {
   flex-grow: 1;
   height: 1.5rem;
-  border: 1px solid rgb(170, 170, 170);
   font-size: 0.75rem;
   font-family: "SimHei";
+  border: 1px solid rgb(170, 170, 170);
 }
 
 .query label {
@@ -347,9 +347,9 @@ main {
 }
 
 .query .buyer-seller .exchange {
+  position: relative;
   height: fit-content;
   margin: auto 0;
-  position: relative;
 }
 
 /* query end */
@@ -357,19 +357,19 @@ main {
 /* query-result start */
 
 .query-result {
-  margin-top: 0.625rem;
   display: flex;
   align-items: stretch;
+  margin-top: 0.625rem;
 }
 
 .query-result .result-display {
   display: grid;
+  flex-grow: 1;
   grid-template-columns: repeat(auto-fit, minmax(4.4375rem, 1fr));
-  margin-left: 0.3125rem;
   gap: 0.3125rem;
+  margin-left: 0.3125rem;
   background-color: inherit;
   border: 0;
-  flex-grow: 1;
 }
 
 .query-result > *,
@@ -381,8 +381,8 @@ main {
 .query-result .arrow {
   padding: 0.3125rem;
   border: 2px solid rgb(170, 170, 170);
-  border-left: 0;
   border-top: 0;
+  border-left: 0;
 }
 
 .query-result .arrow-left,
@@ -407,9 +407,9 @@ main {
 }
 
 .result-display > li {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
   padding: 0.875rem 0;
   text-align: center;
@@ -425,14 +425,14 @@ main {
 }
 
 .result-display .amount {
-  font-size: 1.3125rem;
   color: rgb(236, 101, 0);
+  font-size: 1.3125rem;
 }
 
 .result-display .activate,
 .result-display > li:hover {
-  border-top: 0.25rem solid #4389c9;
   padding-top: 0.6875rem;
+  border-top: 0.25rem solid #4389c9;
 }
 
 .query-result .history {
@@ -440,8 +440,8 @@ main {
   align-items: center;
   justify-content: center;
   padding: 1.0625rem 1.25rem;
-  font-size: 0.75rem;
   color: rgb(83, 83, 83);
+  font-size: 0.75rem;
 }
 
 .query-result .history img {
@@ -453,12 +453,12 @@ main {
 /* per-stat start */
 
 .per-stat {
-  margin: 1.375rem 0 0.875rem 0;
+  margin: 1.375rem 0 0.875rem;
 }
 
 .per-stat .title {
-  font-size: 0.75rem;
   color: rgb(50, 51, 51);
+  font-size: 0.75rem;
 }
 
 .stat-cards {
@@ -472,21 +472,21 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.75rem 7.5% 0.75rem 4.5%;
   background-color: white;
   border: 1px solid #bfc3c7;
-  padding: 0.75rem 7.5% 0.75rem 4.5%;
 }
 
 .per-stat .stat {
+  color: rgb(170, 170, 170);
   font-size: 0.625rem;
   font-family: "SimHei";
   line-height: 2;
-  color: rgb(170, 170, 170);
 }
 
 .per-stat .stat .number {
-  font-size: 0.75rem;
   color: rgb(50, 51, 51);
+  font-size: 0.75rem;
 }
 
 .per-stat .item-color {
@@ -552,39 +552,39 @@ main {
 
 .detail-cards > * .header {
   height: 2.5rem;
-  border-radius: 6px;
   padding-top: 0.8125rem;
   padding-left: 1.25rem;
-  background-color: #f3f5f6;
+  color: rgb(170, 170, 170);
   font-size: 0.75rem;
   font-family: "SimHei";
-  color: rgb(170, 170, 170);
+  background-color: #f3f5f6;
+  border-radius: 6px;
 }
 
 /* project-group-card start */
 
 .project-group-card .card-content {
-  padding: 0.8125rem 1.375rem 1.5rem 1.375rem;
+  padding: 0.8125rem 1.375rem 1.5rem;
 }
 
 .project-group-card .tab-bar {
   display: flex;
-  font-size: 0.75rem;
   color: rgb(83, 83, 83);
+  font-size: 0.75rem;
 }
 
 .project-group-card .tab-bar > li {
+  position: relative;
   display: flex;
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-  position: relative;
-  height: 1.6875rem;
   max-width: 5.1875rem;
+  height: 1.6875rem;
   margin-right: 0.25rem;
+  background-color: #ececef;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  background-color: #ececef;
 }
 
 .project-group-card .tab-bar .activate {
@@ -593,22 +593,22 @@ main {
   border-bottom: 0;
 }
 
-.project-group-card .tab-bar .activate:after {
+.project-group-card .tab-bar .activate::after {
   position: absolute;
-  display: block;
-  content: "";
-  width: 100%;
-  left: 0;
   bottom: 0;
+  left: 0;
+  display: block;
   box-sizing: border-box;
+  width: 100%;
   border: 1px solid transparent;
   box-shadow: 0 1px white;
+  content: "";
   /* tab hover border hack */
 }
 
 .project-group-card .tab-content {
-  border: 1px solid #bfc3c7;
   padding: 1.5625rem 2.3125rem 2.3125rem 1.8125rem;
+  border: 1px solid #bfc3c7;
 }
 
 .project-group-card table {
@@ -629,12 +629,12 @@ main {
 .project-group-card table,
 .project-group-card tr,
 .project-group-card td {
-  border: 1px solid #bfc3c7;
-  border-collapse: collapse;
+  color: rgb(83, 83, 83);
   font-size: 0.75rem;
   font-family: "SimSun";
-  color: rgb(83, 83, 83);
   line-height: 2.5;
+  border: 1px solid #bfc3c7;
+  border-collapse: collapse;
 }
 
 /* project-group-card end */
@@ -642,7 +642,7 @@ main {
 /* project-group-detail-card start */
 
 .project-group-detail-card .card-content {
-  padding: 1.0625rem 2.25rem 2.375rem 2.25rem;
+  padding: 1.0625rem 2.25rem 2.375rem;
 }
 
 .project-group-detail-card form {
@@ -672,25 +672,25 @@ main {
 
 .project-group-detail-card input,
 .project-group-detail-card textarea {
-  font-size: 0.75rem;
-  color: rgb(83, 83, 83);
   width: 100%;
+  padding: 0.5rem 0 0.625rem;
+  color: rgb(83, 83, 83);
+  font-size: 0.75rem;
   /* 注意设为100%时，由于父元素的宽度仍受子元素影响（
     在这里因为input有个默认的size，即使设置完宽度后应也
     视为潜在的影响因素），可能产生非预期效果 */
   border: 0;
-  padding: 0.5rem 0 0.625rem 0;
 }
 
 .project-group-detail-card label {
   display: block;
-  font-size: 0.75rem;
   color: rgb(195, 194, 194);
+  font-size: 0.75rem;
 }
 
 .project-group-detail-card textarea {
-  resize: none;
   height: 7.75rem;
+  resize: none;
 }
 
 .project-group-detail-card .price {
@@ -723,7 +723,7 @@ main {
 /* calendar start */
 
 .calendar .content-wrapper {
-  padding: 0.625rem 1.25rem 1.4375rem 1.25rem;
+  padding: 0.625rem 1.25rem 1.4375rem;
 }
 
 .calendar .nav {
@@ -732,10 +732,10 @@ main {
 }
 
 .calendar .nav > * {
+  height: 1.375rem;
+  color: rgb(83, 83, 83);
   font-size: 0.75rem;
   font-family: "SimHei";
-  color: rgb(83, 83, 83);
-  height: 1.375rem;
   border: 1px solid #bfc3c7;
 }
 
@@ -764,8 +764,8 @@ main {
 .calendar-table table th {
   width: 14.285714%;
   height: 2.5625rem;
-  font-size: 0.710063rem;
   font-weight: normal;
+  font-size: 0.710063rem;
   font-family: "SimHei";
   text-align: center;
 }
@@ -789,7 +789,7 @@ main {
 /* car-rank start */
 
 .car-rank .card-content {
-  padding: 1.125rem 2.5625rem 0 2.5625rem;
+  padding: 1.125rem 2.5625rem 0;
 }
 
 .car-rank table {
@@ -799,20 +799,20 @@ main {
 
 .car-rank td,
 .car-rank th {
-  border: 1px solid #bfc3c7;
   font-family: "SimHei";
   line-height: 2;
   text-align: center;
+  border: 1px solid #bfc3c7;
 }
 
 .car-rank td {
-  font-size: 0.75rem;
   color: rgb(50, 51, 51);
+  font-size: 0.75rem;
 }
 
 .car-rank th {
-  font-size: 0.8125rem;
   color: rgb(35, 24, 21);
+  font-size: 0.8125rem;
 }
 
 .car-rank img {

@@ -1,3 +1,4 @@
+export {};
 /* 数据格式演示
 var aqiSourceData = {
   "北京": {

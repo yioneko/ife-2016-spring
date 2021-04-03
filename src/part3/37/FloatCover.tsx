@@ -10,13 +10,7 @@ interface FloatCoverProps {
 }
 
 export function FloatCover(props: FloatCoverProps): React.ReactElement {
-    const {
-        floatIn,
-        handleConfirm,
-        handleCancel,
-        title,
-        content,
-    } = props;
+    const { floatIn, handleConfirm, handleCancel, title, content } = props;
 
     return (
         <CSSTransition
@@ -28,7 +22,9 @@ export function FloatCover(props: FloatCoverProps): React.ReactElement {
         >
             <div
                 className="float-cover"
-                onClick={(e) => { if (e.target === e.currentTarget) handleCancel(e); }}
+                onClick={(e) => {
+                    if (e.target === e.currentTarget) handleCancel(e);
+                }}
             >
                 <div className="popup">
                     <h3 className="title">{title}</h3>

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Table } from "./Table";
 import "./index.scss";
+import { Table } from "./Table";
 
 function compareNumber(a: number, b: number, ascending = false): number {
     if (ascending) return a - b;
@@ -36,7 +36,8 @@ ReactDOM.render(
                     英语: 70,
                     总分: 230,
                     key: "xiaoliang",
-                },{
+                },
+                {
                     姓名: "e",
                     语文: 94,
                     数学: 84,
@@ -75,7 +76,7 @@ ReactDOM.render(
                     英语: 90,
                     总分: 213,
                     key: "a",
-                }
+                },
             ]}
             comparators={{
                 语文: compareNumber,

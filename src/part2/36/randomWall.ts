@@ -35,23 +35,32 @@ export function useRandomWall(props: {
         setRandomWallCounter(0);
         for (let i = 0; i < totalIterateCount; ++i) {
             // animPromiseRef.current = animPromiseRef.current.then(async () => {
-                const [randomX, randomY] = [randomPoint(), randomPoint()];
-                const wallCoordinate = {
-                    x: randomX,
-                    y: randomY,
-                };
-                if (
-                    !isCoordinateEqual(chessState.coordinate, wallCoordinate) &&
-                    wall[randomX][randomY] === emptyWall
-                ) {
-                    wallDispatch({ pos: wallCoordinate, color: wallBuildColor })
-                }
+            const [randomX, randomY] = [randomPoint(), randomPoint()];
+            const wallCoordinate = {
+                x: randomX,
+                y: randomY,
+            };
+            if (
+                !isCoordinateEqual(chessState.coordinate, wallCoordinate) &&
+                wall[randomX][randomY] === emptyWall
+            ) {
+                wallDispatch({ pos: wallCoordinate, color: wallBuildColor });
+            }
         }
-    }, [chessState.coordinate, iterateCount, randomPoint, randomWallCounter, setRandomWallCounter, wall, wallBuildColor, wallDispatch]);
+    }, [
+        chessState.coordinate,
+        iterateCount,
+        randomPoint,
+        randomWallCounter,
+        setRandomWallCounter,
+        wall,
+        wallBuildColor,
+        wallDispatch,
+    ]);
 
     useEffect(() => {
         randomWalls();
-    }, [randomWalls])
+    }, [randomWalls]);
 
     return {
         randomWalls,
